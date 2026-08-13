@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Wel (Tio Jr)</title>
+    <meta name="description" content="Blog de Wel (Tio Jr)">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .header {
+            background: linear-gradient(135deg, #5259bc 0%, #3b3b44 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Classic Grid Style */
+        .blog-classic .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .post-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+        }
+        .post-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .post-content {
+            padding: 1.5rem;
+        }
+        .post-content h2, .post-content h3 {
+            margin-bottom: 0.5rem;
+        }
+        .post-content h2 a, .post-content h3 a {
+            color: #333;
+            text-decoration: none;
+        }
+        .post-content h2 a:hover, .post-content h3 a:hover {
+            color: #5259bc;
+        }
+        .post-excerpt {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #999;
+        }
+        .category {
+            background: #5259bc20;
+            color: #5259bc;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+        }
+        
+        /* Elegant Magazine Style */
+        .blog-elegant .posts-container {
+            margin: 3rem 0;
+        }
+        .blog-elegant .featured-article {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 30px rgba(0,0,0,0.08);
+        }
+        .blog-elegant .featured-article img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        .blog-elegant .featured-article .article-content {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .blog-elegant .featured-article h2 {
+            font-size: 2rem;
+            margin: 1rem 0;
+            font-family: Georgia, serif;
+        }
+        .blog-elegant .magazine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .blog-elegant .magazine-post {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+        .blog-elegant .magazine-post img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        /* Modern Editorial Style */
+        .blog-modern .posts-container {
+            margin: 3rem 0;
+        }
+        .blog-modern .editorial-post {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 2rem;
+            align-items: center;
+            background: white;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+        .blog-modern .post-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #5259bc;
+            opacity: 0.3;
+        }
+        .blog-modern .editorial-post img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .blog-modern .editorial-post h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .posts-container {
+            min-height: 400px;
+        }
+    </style>
+</head>
+<body class="blog-elegant">
+    
+    <header style="background: #5259bc; padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <a href="/junioresteves32" style="text-decoration: none; display: flex; align-items: center;">
+            
+              <img 
+                src="https://osuozhvpecszacvnqwky.supabase.co/storage/v1/object/public/logos/0ad8726d-cad0-49f6-9b94-cc1a1e44ee3c/logo_1755104523185.png" 
+                alt="Wel (Tio Jr)"
+                style="height: 40px; width: auto; max-width: 150px; object-fit: contain;"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+              />
+            
+            <h1 style="color: #FFFFFF; margin: 0; font-size: 1.5rem; font-weight: bold; display: none;">
+              Wel (Tio Jr)
+            </h1>
+          </a>
+          <nav class="desktop-nav" style="display: flex; gap: 2rem;">
+            <a href="/junioresteves32" style="color: #FFFFFF; text-decoration: none; padding: 0.5rem; opacity: 0.9;">
+          Home
+        </a>
+<a href="/junioresteves32/blog" style="color: #FFFFFF; text-decoration: none; padding: 0.5rem; font-weight: 500;">
+          Blog
+        </a>
+          </nav>
+        </div>
+      </div>
+      <style>
+        @media (max-width: 768px) {
+          .desktop-nav { display: none !important; }
+        }
+      </style>
+    </header>
+  
+    
+    <main class="container">
+        <div class="posts-container">
+            
+            
+          
+            <article class="featured-article">
+              <img src="https://osuozhvpecszacvnqwky.supabase.co/storage/v1/object/public/blog-images/0ad8726d-cad0-49f6-9b94-cc1a1e44ee3c/featured-1760032919939.png" alt="O Cometa Que Está Dividindo Cientistas e Quebrando a Internet">
+              <div class="article-content">
+                <span class="category">Blog</span>
+                <h2><a href="/junioresteves32/blog/o-cometa-que-est-dividindo-cientistas-e-quebrando-a-internet">O Cometa Que Está Dividindo Cientistas e Quebrando a Internet</a></h2>
+                <p>Sua composição química é tão bizarra, sua trajetória tão improvável, e suas características tão únicas, que talvez, apenas talvez, não estejamos olhando para um simples cometa.</p>
+                <time>10/9/2025</time>
+              </div>
+            </article>
+          
+          <div class="magazine-grid">
+            
+              <article class="magazine-post">
+                <img src="https://osuozhvpecszacvnqwky.supabase.co/storage/v1/object/public/blog-images/0ad8726d-cad0-49f6-9b94-cc1a1e44ee3c/featured-1758330051468.png" alt="Método Pomodoro: A Ciência Por Trás do Tomate que Revolucionou a Produtividade Mundial">
+                <div class="post-content">
+                  <h3><a href="/junioresteves32/blog/m-todo-pomodoro-a-ciencia-por-tras-do-tomate-que-revolucionou-a-produtividade-mundial">Método Pomodoro: A Ciência Por Trás do Tomate que Revolucionou a Produtividade Mundial</a></h3>
+                  <p>A História de um Estudante Italiano que Mudou a Forma Como Trabalhamos</p>
+                  <time>9/18/2025</time>
+                </div>
+              </article>
+            
+              <article class="magazine-post">
+                <img src="https://osuozhvpecszacvnqwky.supabase.co/storage/v1/object/public/blog-images/0ad8726d-cad0-49f6-9b94-cc1a1e44ee3c/featured-1755109571833.png" alt="Por que 72% das pequenas empresas ainda não têm site profissional?">
+                <div class="post-content">
+                  <h3><a href="/junioresteves32/blog/por-que-72-das-pequenas-empresas-ainda-n-o-t-m-site-profissional">Por que 72% das pequenas empresas ainda não têm site profissional?</a></h3>
+                  <p>A oportunidade bilionária que desenvolvedores iniciantes estão perdendo em 2025</p>
+                  <time>8/13/2025</time>
+                </div>
+              </article>
+            
+          </div>
+        
+            
+        </div>
+        
+        
+    </main>
+    
+    
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h4>Wel (Tio Jr)</h4>
+            <p>Address: 1234 Your Address, Your City</p>
+            <p>Phone: 1234551234</p>
+            <p>Email: will@quickautomation.online</p>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Working Hours</h4>
+            
+          </div>
+          
+          <div class="footer-column">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+              
+              
+              
+              
+              
+              
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>© 2026 Wel (Tio Jr). All rights reserved</p>
+          <p>Powered by <a href="https://goconverso.com" style="color: #5259bc;">GoConverso</a></p>
+        </div>
+      </div>
+    </footer>
+    <style>
+      .footer {
+        background: #1a1a1a;
+        color: #fff;
+        padding: 40px 0 20px;
+        margin-top: 60px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 30px;
+      }
+      .footer-column h4 {
+        margin-bottom: 1rem;
+        color: #5259bc;
+      }
+      .footer-column p {
+        margin: 0.5rem 0;
+        color: #ccc;
+      }
+      .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+      .social-links a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .social-links a:hover {
+        color: #5259bc;
+      }
+      .footer-bottom {
+        border-top: 1px solid #333;
+        padding-top: 20px;
+        text-align: center;
+        color: #999;
+      }
+      .footer-bottom a {
+        color: #5259bc;
+        text-decoration: none;
+      }
+    </style>
+  
+</body>
+</html>
