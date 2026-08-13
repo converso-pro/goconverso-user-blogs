@@ -1,0 +1,9 @@
+# Robots.txt for Wel (Tio Jr)
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://goconverso.com/junioresteves32/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
