@@ -1,0 +1,9 @@
+# Robots.txt for chickenandbugcc
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://goconverso.com/chickenandbugcc/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
