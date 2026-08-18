@@ -1,0 +1,9 @@
+# Robots.txt for Globaltechsis Solutions ia
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://goconverso.com/assistentevirtual/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
